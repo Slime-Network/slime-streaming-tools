@@ -5,18 +5,15 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { SessionTypes } from '@walletconnect/types';
 import { useState } from 'react';
 
-import WalletConnectMenu from '../gosti-shared/components/WalletConnectMenu';
-import ThemeSwitcher from "./ThemeSwitcher";
+import ThemeSwitcher from './ThemeSwitcher';
 
-export const MainTopBar = (
-	session: SessionTypes.Struct | undefined,
-	connectToWallet: () => void,
-	disconnectFromWallet: () => void,
-) => {
+interface MainTopBarProps {
+	title: string;
+}
 
+export const MainTopBar = (props: MainTopBarProps) => {
 	const [anchor2El, setAnchor2El] = useState<null | HTMLElement>(null);
 	const isMainMenuOpen = Boolean(anchor2El);
 
@@ -63,21 +60,14 @@ export const MainTopBar = (
 					>
 						<MenuIcon />
 					</IconButton>
-					<Typography
-						variant="h6"
-						noWrap
-						component="div"
-						sx={{ display: { xs: 'none', sm: 'block' } }}
-					>
-						Streaming Tools
+					<Typography variant="h6" noWrap component="div" sx={{ display: { xs: 'none', sm: 'block' } }}>
+						{props.title}
 					</Typography>
-					<Box sx={{ flexGrow: 1 }} />
-					<Box sx={{ display: { xs: 'flex' } }}>
-						{WalletConnectMenu(session, connectToWallet, disconnectFromWallet)}
-					</Box>
 				</Toolbar>
 			</AppBar>
 			{renderMainMenu}
 		</Box>
 	);
 };
+
+export default MainTopBar;

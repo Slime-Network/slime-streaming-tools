@@ -1,9 +1,9 @@
 {
-	"name": "gosti-streaming-tools",
+	"name": "slime-streaming-tools",
 	"version": "0.1.0",
 	"author": "Gaerax <gaerax@gmail.com>",
 	"license": "Apache-2.0",
-	"description": "Gosti Streaming tools",
+	"description": "Slime Streaming tools",
 	"private": true,
 	"homepage": "./",
 	"dependencies": {

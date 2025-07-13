@@ -1,1 +1,1 @@
-yarn build & robocopy /NDL /NFL /NP /NJS /NJH /E "./build" "../gosti-client-tauri/resources/apps/gosti-streaming-tools/"
+yarn build & robocopy /NDL /NFL /NP /NJS /NJH /E "./build" "../slime-client-tauri/resources/apps/slime-streaming-tools/"
